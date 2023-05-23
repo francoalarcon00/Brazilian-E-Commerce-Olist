@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-8IQELPVV"
   DTS:CreatorName="LAPTOP-8IQELPVV\isabe"
-  DTS:DTSID="{5EA35A3B-5563-4767-8A9A-6C5DE6CAA33B}"
+  DTS:DTSID="{7B8633DE-B91A-4042-90B6-FBCAAD13D56E}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
   DTS:LocaleID="3082"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{2365B3A7-03A0-4FC6-BD0D-D8CE238EFB25}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{526F5A3A-645B-4057-B741-A6F889817D2F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{80785110-9FE6-411F-A6AF-2B02164E1B85}"
+      DTS:DTSID="{4971814C-E88F-42B8-AE33-1CFAA93A3F36}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="geolocation_zip_code_prefix"
-              DTS:DTSID="{5E6BD8E8-5889-4670-9462-FAEA2AF36AE5}"
+              DTS:DTSID="{C69EA424-7964-4A99-8A46-8BCF23A7599E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="geolocation_lat"
-              DTS:DTSID="{D369D700-63A0-4B1E-835F-4DC961F62605}"
+              DTS:DTSID="{74BEC2A2-5338-466B-90C9-DBB5E32ED074}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="geolocation_lng"
-              DTS:DTSID="{053C2E66-B314-43B5-876D-CC4A82A42662}"
+              DTS:DTSID="{B58836ED-C9ED-4FA2-982D-B3CA0745AAF8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="geolocation_city"
-              DTS:DTSID="{E782A725-49C1-4089-A9C7-EF50C64828E0}"
+              DTS:DTSID="{BF706D9F-F0AF-4382-9767-6728F446E3F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="geolocation_state"
-              DTS:DTSID="{8C325396-4AA9-4AC8-852C-86C7F2930EF8}"
+              DTS:DTSID="{D4F57FE6-67D3-4577-87AA-182A830B2CA1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -84,13 +84,13 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAPTOP-8IQELPVV.Brazilian]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0EB5DD50-1CFC-4C45-9522-3BB8B75249E8}"
+      DTS:DTSID="{C63FB5A8-9107-4D03-A926-AD4A53704CBE}"
       DTS:ObjectName="LAPTOP-8IQELPVV.Brazilian">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-8IQELPVV;Initial Catalog=Brazilian;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0EB5DD50-1CFC-4C45-9522-3BB8B75249E8}LAPTOP-8IQELPVV.Brazilian;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-8IQELPVV;Initial Catalog=Brazilian;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C63FB5A8-9107-4D03-A926-AD4A53704CBE}LAPTOP-8IQELPVV.Brazilian;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -100,7 +100,7 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3C2CB8BA-8C0A-420D-816A-68775D6A70A5}"
+      DTS:DTSID="{2399DB1B-98DD-4F62-B637-BA082413055C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -109,7 +109,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0EB5DD50-1CFC-4C45-9522-3BB8B75249E8}"
+          SQLTask:Connection="{C63FB5A8-9107-4D03-A926-AD4A53704CBE}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [Geolocation]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -117,7 +117,7 @@
       DTS:refId="Package\Tarea Flujo de datos"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{0B062950-9B88-4CA8-8C0A-F3A0A6C350FB}"
+      DTS:DTSID="{5080C748-3AC8-4FB7-9DDE-3EE3E30F6AE5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Tarea Flujo de datos"
@@ -330,7 +330,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[Geolocation]</property>
+                  name="OpenRowset">[dbo].[DimGeolocation]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -373,8 +373,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-8IQELPVV.Brazilian]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-8IQELPVV.Brazilian]"
+                  connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -697,7 +697,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{E0975683-C647-4054-8331-5141A48AA122}"
+      DTS:DTSID="{5E7A1A49-5CB9-4CBE-BA4D-6E1CFB5DB705}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -761,6 +761,10 @@
           Size="175,42"
           Id="Package\Tarea Flujo de datos\Conversión de datos"
           TopLeft="277,116" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
+          TopLeft="292,190" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
           TopLeft="364,84">
@@ -783,10 +787,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
-          TopLeft="292,190" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
           TopLeft="364.5,158">

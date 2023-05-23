@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-20APRT2K"
   DTS:CreatorName="LAPTOP-20APRT2K\Juan Rodriguez"
-  DTS:DTSID="{B45C047A-194C-47B2-8AE9-93C3BDE8D1F5}"
+  DTS:DTSID="{1A9FAA43-1FA1-49D1-B6BF-23BC0C5AB122}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
   DTS:LocaleID="11274"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="DimSellers"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{5AB116D1-094D-4B5A-82D3-9A2486083CA6}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{D7059188-E717-492C-9CEB-C65FC63B749D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{B00C0FE1-A749-4D60-BC7A-799D01526117}"
+      DTS:DTSID="{A840027B-483E-4BF6-8A3D-431459ACE5D6}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="seller_id"
-              DTS:DTSID="{EE504DEA-F89E-42F6-BACC-534AD1FF9C45}"
+              DTS:DTSID="{0848965A-6AC7-46C1-A8CC-66DC4DDD9375}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="seller_zip_code_prefix"
-              DTS:DTSID="{00330299-F989-4D1C-9019-3784A96943FF}"
+              DTS:DTSID="{EA91CAD2-E945-4407-9F76-45D21A98FA2F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="seller_city"
-              DTS:DTSID="{2138833B-C61E-4D86-8A0B-60A91EF85327}"
+              DTS:DTSID="{8A2A4E36-99CB-4E3C-AB20-68CB9AF7AD86}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="seller_state"
-              DTS:DTSID="{DADFDA68-9184-4B3E-851C-EE302E80EDDC}"
+              DTS:DTSID="{02D6C481-4FA6-409E-ABC5-A073D62FC17C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -75,13 +75,13 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.BrazilianEcom]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A60534F7-5844-4E9D-B376-AE9608BA158A}"
+      DTS:DTSID="{E7499997-42C7-4962-A506-A7097306514B}"
       DTS:ObjectName="LocalHost.BrazilianEcom">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=BrazilianEcom;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A60534F7-5844-4E9D-B376-AE9608BA158A}LocalHost.BrazilianEcom;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=BrazilianEcom;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E7499997-42C7-4962-A506-A7097306514B}LocalHost.BrazilianEcom;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -91,7 +91,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{1A732BCC-EA93-44BC-BFE7-6987ED132755}"
+      DTS:DTSID="{7A501655-6493-47F1-B75F-23C6873B0E21}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -501,8 +501,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.BrazilianEcom]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.BrazilianEcom]"
+                  connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -617,7 +617,7 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{97117D2A-8EB5-4046-BC73-ECF242E2D15C}"
+      DTS:DTSID="{C4C11DC8-2F02-4020-AA80-EE402F497786}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -626,7 +626,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A60534F7-5844-4E9D-B376-AE9608BA158A}"
+          SQLTask:Connection="{E7499997-42C7-4962-A506-A7097306514B}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DimSellers" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -635,7 +635,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{EBDBC38B-60EF-418B-A65F-7BA293573D7D}"
+      DTS:DTSID="{1E2F9C73-2173-4CFF-9824-3D252DBD1495}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -699,6 +699,10 @@
           Size="156,42"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="251,110" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="255,192" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="320.5,70">
@@ -733,10 +737,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="255,192" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="329,152">

@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-K0PIPHMU"
   DTS:CreatorName="LAPTOP-K0PIPHMU\dario"
-  DTS:DTSID="{2411EA7E-72D3-4F4F-A4AC-EE07137A0F8B}"
+  DTS:DTSID="{5E7B93A8-7F90-4488-8295-BD332D60482D}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="DimCustomers"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{2A7A7855-1345-4E09-BFE8-8CB7BAE9A5EF}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{D0F25EAA-7580-4F19-971E-91CCB0617A46}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{9D65F003-EEB5-4A07-BF58-5A6D355D133E}"
+      DTS:DTSID="{0AB7AAA6-AE71-499E-94A5-CBE59222E578}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_id"
-              DTS:DTSID="{4063C95E-BDAF-4725-8FE5-0B8286598BD6}"
+              DTS:DTSID="{6ECA304B-92A1-4626-8DE2-708D8A576FD7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_unique_id"
-              DTS:DTSID="{D3B98A50-E82E-494A-AB2F-6D59E55CF369}"
+              DTS:DTSID="{22080D22-E2DF-4C00-ADC0-56FC7AD80710}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_zip_code_prefix"
-              DTS:DTSID="{F9D6699B-B8A8-4260-90F8-3991F8F5A5F9}"
+              DTS:DTSID="{11097B57-742E-4945-BBA7-9C105F300393}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_city"
-              DTS:DTSID="{4DB50AFA-D7C1-4FAA-A021-32C66BFC4985}"
+              DTS:DTSID="{E4C06C49-A967-47BB-B7E2-F56591A6DB8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,22 +75,10 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_state"
-              DTS:DTSID="{C3C9A8C3-F2CF-4997-BDA2-F7AC2852834C}"
+              DTS:DTSID="{6FE07F9B-B60C-4123-ABF6-C51E6CFBE701}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.Presupuesto]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{B779070E-BF9C-4818-AE3C-2C2A87229F8A}"
-      DTS:ObjectName="LocalHost.Presupuesto">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=Presupuesto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B779070E-BF9C-4818-AE3C-2C2A87229F8A}LocalHost.Presupuesto;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -100,7 +88,7 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6D209C56-52EB-4432-A837-15DD87FEB4E2}"
+      DTS:DTSID="{43BD5C97-33F0-4EDD-A2F9-A5F8705C94EE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -109,7 +97,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{B779070E-BF9C-4818-AE3C-2C2A87229F8A}"
+          SQLTask:Connection="{25088061-81E9-42C8-BE3D-BE0BA0080450}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE ODS_Customer_Dataset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -117,7 +105,7 @@
       DTS:refId="Package\Tarea Flujo de datos"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{AE59E8CF-C2DA-434B-B45B-363E427ABA16}"
+      DTS:DTSID="{1B81167D-A110-4DC0-B2FB-023DFA5692FE}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Tarea Flujo de datos"
@@ -332,7 +320,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[ODS_Customer_Dataset]</property>
+                  name="OpenRowset">[dbo].[DimCustomer]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -375,8 +363,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.Presupuesto]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Presupuesto]"
+                  connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -703,7 +691,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{66874BDA-14F3-4062-AAAB-A0F576D5ACCD}"
+      DTS:DTSID="{CB0F5064-78CF-4E12-AFF7-02D74023ABCD}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -830,5 +818,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino Customer_Dataset">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

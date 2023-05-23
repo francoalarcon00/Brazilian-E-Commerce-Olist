@@ -5,34 +5,34 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="FRANCOTRABAJO"
   DTS:CreatorName="FRANCOTRABAJO\franc"
-  DTS:DTSID="{4BEC80D9-8763-4C75-BA7B-0982F90C5189}"
+  DTS:DTSID="{052C3C73-3E31-4292-BE1F-3C6A485FA03C}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{BF7BB0CF-547F-494B-AF53-0AA41E7DCF06}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{F1F28180-3DBA-410F-BD64-E3ED2B1475CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Data Connection]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
+      DTS:DTSID="{E342AE8A-5447-4617-97BB-72E662BCCA21}"
       DTS:ObjectName="Data Connection">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Initial Catalog=Presupuesto;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimPayments-{292A0429-EBEC-49F7-84EE-F2C605BE3E60}Data Connection;Auto Translate=False;" />
+          DTS:ConnectionString="Initial Catalog=Presupuesto;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimPayments-{E342AE8A-5447-4617-97BB-72E662BCCA21}Data Connection;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
       DTS:Description="Payments"
-      DTS:DTSID="{A5ACAA86-8634-4FBD-9E96-4C556243D945}"
+      DTS:DTSID="{DCDC802B-4C37-4B06-97A8-EBEEE32B8CD6}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -52,7 +52,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order_id"
-              DTS:DTSID="{0A12D8C6-A2FD-4ED5-8E24-B990249952C5}"
+              DTS:DTSID="{910A29BB-54B3-43D2-8398-21F7C4621DA2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +61,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_sequential"
-              DTS:DTSID="{A4F0CA35-3783-42C7-8530-04388810950B}"
+              DTS:DTSID="{50E5E5E9-B760-4285-AB5A-6C3996A86A1D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -70,7 +70,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_type"
-              DTS:DTSID="{4ACC29D1-CEAC-4F87-9B3C-F15272772E95}"
+              DTS:DTSID="{DF429989-7DB0-4EE9-8E6F-5F62C48B1AFB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_installments"
-              DTS:DTSID="{B9809E8E-411C-4F48-B0A5-5E51FFCC4C37}"
+              DTS:DTSID="{AA4461A8-B6A1-41A6-9B4C-E4C041495F72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,7 +88,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_value"
-              DTS:DTSID="{8284990E-7C8A-4F35-AB0A-A154872BCE4E}"
+              DTS:DTSID="{B4D3CA09-DBCF-47E2-A5EE-7CCAEFC96D35}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -101,7 +101,7 @@
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{32D9DF53-89F2-4CFF-9C75-426D8F2308A2}"
+      DTS:DTSID="{8F829819-814B-4683-BCEE-75AA6F74EA45}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence Container">
@@ -111,7 +111,7 @@
           DTS:refId="Package\Sequence Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{C2C96B26-3965-4289-868C-C5F2A6269FC0}"
+          DTS:DTSID="{000BA1DB-7F5C-4EDF-9666-F1DE639BE912}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -531,7 +531,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[DimPayments]</property>
+                      name="OpenRowset">[dbo].[DimPayments]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -574,8 +574,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Data Connection]"
-                      connectionManagerRefId="Package.ConnectionManagers[Data Connection]"
+                      connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -696,7 +696,7 @@
           DTS:refId="Package\Sequence Container\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A4B1590F-C5A8-44B7-ACAB-AAEC23F5F805}"
+          DTS:DTSID="{7223B32B-E507-4F8D-B36C-6B3F55D55C88}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
@@ -705,7 +705,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
+              SQLTask:Connection="{E342AE8A-5447-4617-97BB-72E662BCCA21}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE DimPayments;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -714,7 +714,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{F4539135-B471-4166-9AC4-129737D27467}"
+          DTS:DTSID="{E030A716-E0F7-4DD6-87D9-B85C6001B096}"
           DTS:From="Package\Sequence Container\Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
