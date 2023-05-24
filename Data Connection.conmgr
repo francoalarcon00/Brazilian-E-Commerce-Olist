@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Data Connection"
+  DTS:DTSID="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Initial Catalog=master;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DimPayments-{292A0429-EBEC-49F7-84EE-F2C605BE3E60}Data Connection;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
