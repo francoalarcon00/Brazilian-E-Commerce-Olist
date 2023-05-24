@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-OKNA0KL_SQLEXPRESS.master"
+  DTS:DTSID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-OKNA0KL\SQLEXPRESS;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Brazilian-E-Commerce-Olist-{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}DESKTOP-OKNA0KL\SQLEXPRESS.master;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
