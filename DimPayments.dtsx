@@ -5,34 +5,22 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="FRANCOTRABAJO"
   DTS:CreatorName="FRANCOTRABAJO\franc"
-  DTS:DTSID="{052C3C73-3E31-4292-BE1F-3C6A485FA03C}"
+  DTS:DTSID="{4BEC80D9-8763-4C75-BA7B-0982F90C5189}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1033"
   DTS:ObjectName="DimPayments"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{F1F28180-3DBA-410F-BD64-E3ED2B1475CC}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{11C1F59B-C7C2-4CD0-B46C-E65C75D55350}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Data Connection]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E342AE8A-5447-4617-97BB-72E662BCCA21}"
-      DTS:ObjectName="Data Connection">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Initial Catalog=Presupuesto;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-DimPayments-{E342AE8A-5447-4617-97BB-72E662BCCA21}Data Connection;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
       DTS:Description="Payments"
-      DTS:DTSID="{DCDC802B-4C37-4B06-97A8-EBEEE32B8CD6}"
+      DTS:DTSID="{A5ACAA86-8634-4FBD-9E96-4C556243D945}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -43,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\franc\Desktop\olist_order_payments_dataset.csv">
+          DTS:ConnectionString="C:\Users\franc\Documents\Project SSIS\Brazilian-E-Commerce-Olist\res\olist_order_payments_dataset.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -52,7 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order_id"
-              DTS:DTSID="{910A29BB-54B3-43D2-8398-21F7C4621DA2}"
+              DTS:DTSID="{6AD284F7-E152-4E9A-956B-7D8664160604}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_sequential"
-              DTS:DTSID="{50E5E5E9-B760-4285-AB5A-6C3996A86A1D}"
+              DTS:DTSID="{4E8916F1-F78F-4182-84D9-1859165704E2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -70,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_type"
-              DTS:DTSID="{DF429989-7DB0-4EE9-8E6F-5F62C48B1AFB}"
+              DTS:DTSID="{469647DF-CDA8-4639-95B5-A8758F706D72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_installments"
-              DTS:DTSID="{AA4461A8-B6A1-41A6-9B4C-E4C041495F72}"
+              DTS:DTSID="{8646E77B-20A2-4D2C-9D0A-03D07194E895}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="payment_value"
-              DTS:DTSID="{B4D3CA09-DBCF-47E2-A5EE-7CCAEFC96D35}"
+              DTS:DTSID="{77E4F8BF-9D96-404C-B127-9D09B943DA5C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -101,7 +89,7 @@
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{8F829819-814B-4683-BCEE-75AA6F74EA45}"
+      DTS:DTSID="{32D9DF53-89F2-4CFF-9C75-426D8F2308A2}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence Container">
@@ -111,7 +99,7 @@
           DTS:refId="Package\Sequence Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{000BA1DB-7F5C-4EDF-9666-F1DE639BE912}"
+          DTS:DTSID="{C2C96B26-3965-4289-868C-C5F2A6269FC0}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -181,8 +169,7 @@
                       <outputColumns>
                         <outputColumn
                           refId="Package\Sequence Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="50"
@@ -223,8 +210,7 @@
                         </outputColumn>
                         <outputColumn
                           refId="Package\Sequence Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of payment_type]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="50"
@@ -531,7 +517,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[DimPayments]</property>
+                      name="OpenRowset">[DimPayments]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -574,8 +560,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
+                      connectionManagerID="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Connection]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -589,8 +575,7 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of order_id]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
+                          cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Copy of order_id"
                           externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
@@ -603,8 +588,7 @@
                           lineageId="Package\Sequence Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of payment_sequential]" />
                         <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of payment_type]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
+                          cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Copy of payment_type"
                           externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
@@ -626,8 +610,7 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="order_id" />
                         <externalMetadataColumn
@@ -636,8 +619,7 @@
                           name="payment_sequential" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="payment_type" />
                         <externalMetadataColumn
@@ -648,6 +630,10 @@
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_value]"
                           dataType="r4"
                           name="payment_value" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_id]"
+                          dataType="i4"
+                          name="payment_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -696,7 +682,7 @@
           DTS:refId="Package\Sequence Container\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7223B32B-E507-4F8D-B36C-6B3F55D55C88}"
+          DTS:DTSID="{A4B1590F-C5A8-44B7-ACAB-AAEC23F5F805}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
@@ -705,7 +691,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{E342AE8A-5447-4617-97BB-72E662BCCA21}"
+              SQLTask:Connection="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE DimPayments;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -714,7 +700,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E030A716-E0F7-4DD6-87D9-B85C6001B096}"
+          DTS:DTSID="{F4539135-B471-4166-9AC4-129737D27467}"
           DTS:From="Package\Sequence Container\Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -770,7 +756,7 @@
           PanelSize="292,216"
           Size="292,259"
           Id="Package\Sequence Container"
-          TopLeft="388,130" />
+          TopLeft="389,129" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -782,29 +768,29 @@
         <NodeLayout
           Size="156,42"
           Id="Package\Sequence Container\Data Flow Task\Data Conversion"
-          TopLeft="478,210" />
+          TopLeft="479,201" />
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\Data Flow Task\OLE DB Destination"
-          TopLeft="472,301" />
+          TopLeft="473,281" />
         <NodeLayout
           Size="151,42"
           Id="Package\Sequence Container\Data Flow Task\Flat File Source"
           TopLeft="478,123" />
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="554.75,165">
+          TopLeft="555.25,165">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,37.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -815,18 +801,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="556.75,252">
+          TopLeft="557.75,243">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,41.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

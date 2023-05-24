@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-K0PIPHMU"
   DTS:CreatorName="LAPTOP-K0PIPHMU\dario"
-  DTS:DTSID="{5E7B93A8-7F90-4488-8295-BD332D60482D}"
+  DTS:DTSID="{18A1AE21-E92E-4128-82F2-8A47013F09EE}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="3082"
   DTS:ObjectName="DimCustomers"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{D0F25EAA-7580-4F19-971E-91CCB0617A46}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{04DF91E5-F4E2-44E2-B92B-B3E1D74E97C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{0AB7AAA6-AE71-499E-94A5-CBE59222E578}"
+      DTS:DTSID="{63868E78-BC25-4EBE-8A9F-DD2CF798366C}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\TRABAJO\WE PLAN\Practicas Personales\practica 185\download-sample-database\olist_customers_dataset.csv">
+          DTS:ConnectionString="C:\Users\franc\Documents\Project SSIS\Brazilian-E-Commerce-Olist\res\olist_customers_dataset.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_id"
-              DTS:DTSID="{6ECA304B-92A1-4626-8DE2-708D8A576FD7}"
+              DTS:DTSID="{57697B0C-3013-4FE1-8840-E18CD63E02D6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_unique_id"
-              DTS:DTSID="{22080D22-E2DF-4C00-ADC0-56FC7AD80710}"
+              DTS:DTSID="{A46FB77A-0932-4884-81E8-F78979D8C3E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_zip_code_prefix"
-              DTS:DTSID="{11097B57-742E-4945-BBA7-9C105F300393}"
+              DTS:DTSID="{21FD2DF1-81A7-44B1-96AF-50CC2AEDED23}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_city"
-              DTS:DTSID="{E4C06C49-A967-47BB-B7E2-F56591A6DB8E}"
+              DTS:DTSID="{190E866A-2534-45DC-B040-A5AB2B282AD0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_state"
-              DTS:DTSID="{6FE07F9B-B60C-4123-ABF6-C51E6CFBE701}"
+              DTS:DTSID="{9E8CD9CE-B2C3-48C8-8102-2B95DBDA54AE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -85,618 +85,630 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{43BD5C97-33F0-4EDD-A2F9-A5F8705C94EE}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9637A513-86D3-450D-8D2E-27B44D38508A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="Sequence Container">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{25088061-81E9-42C8-BE3D-BE0BA0080450}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE ODS_Customer_Dataset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Tarea Flujo de datos"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{1B81167D-A110-4DC0-B2FB-023DFA5692FE}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Flujo de datos"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Tarea Flujo de datos\Conversión de datos"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-              description="Conversión de datos"
-              name="Conversión de datos"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
-                  name="Entrada de conversión de datos">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="customer_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_unique_id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="customer_unique_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_zip_code_prefix]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="customer_zip_code_prefix"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_city]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="customer_city"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_state]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="customer_state"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]"
-                  exclusionGroup="1"
-                  name="Salida de conversión de datos"
-                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]"
-                      name="Copy of customer_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]"
-                      name="Copy of customer_unique_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]"
-                      name="Copy of customer_zip_code_prefix"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]"
-                      name="Copy of customer_city"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      length="3"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]"
-                      name="Copy of customer_state"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de conversión de datos"
-                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Destino Customer_Dataset"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
-              description="Destino de OLE DB"
-              name="Destino Customer_Dataset"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimCustomer]</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Connections[OleDbConnection]"
-                  connectionManagerID="{30D136A9-BC6B-4BC8-92CF-91D738CAEE26}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-OKNA0KL_SQLEXPRESS.master]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]"
-                  errorOrTruncationOperation="Insertar"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de destino de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_id]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of customer_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_id]"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_unique_id]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of customer_unique_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_unique_id]"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_zip_code_prefix]"
-                      cachedDataType="i4"
-                      cachedName="Copy of customer_zip_code_prefix"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_zip_code_prefix]"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_city]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of customer_city"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_city]"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_state]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="Copy of customer_state"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_state]"
-                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_id]"
-                      dataType="wstr"
-                      length="50"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_unique_id]"
-                      dataType="wstr"
-                      length="50"
-                      name="customer_unique_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_zip_code_prefix]"
-                      dataType="i4"
-                      name="customer_zip_code_prefix" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_city]"
-                      dataType="wstr"
-                      length="50"
-                      name="customer_city" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_state]"
-                      dataType="wstr"
-                      length="3"
-                      name="customer_state" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Origen Customer_Dataset"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Origen de archivo plano"
-              localeId="3082"
-              name="Origen Customer_Dataset"
-              usesDispositions="true"
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{802DC870-E2A1-40FA-B729-84043869C2B9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE DimCustomers" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Tarea Flujo de datos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{C3C5FDEC-9246-40EB-9D7F-54A8473B8AAF}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Flujo de datos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
               version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Especifica si las columnas de longitud cero se tratan como NULL."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano]"
-                  name="Salida de origen de archivo plano">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
+              <components>
+                <component
+                  refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversión de datos"
+                  name="Conversión de datos"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                      name="Entrada de conversión de datos">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_id"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_unique_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_unique_id"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_zip_code_prefix]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_zip_code_prefix"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_city]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_city"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[customer_state]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_state"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]"
+                      exclusionGroup="1"
+                      name="Salida de conversión de datos"
+                      synchronousInputId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]"
+                          name="Copy of customer_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]"
+                          name="Copy of customer_unique_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]"
+                          name="Copy of customer_zip_code_prefix"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]"
+                          name="Copy of customer_city"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]"
+                          name="Copy of customer_state"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de conversión de datos"
+                      synchronousInputId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino Customer_Dataset"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[DimCustomers]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Connections[OleDbConnection]"
+                      connectionManagerID="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Connection]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_id]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]"
-                      name="customer_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_unique_id]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]"
-                      name="customer_unique_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_zip_code_prefix]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]"
-                      name="customer_zip_code_prefix"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_city]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]"
-                      name="customer_city"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_state]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]"
-                      name="customer_state"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_unique_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="customer_unique_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_zip_code_prefix]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="customer_zip_code_prefix" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_city]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="customer_city" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_state]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="customer_state" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano]"
-                  isErrorOut="true"
-                  name="Salida de error de origen de archivo plano">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Columna de salida de error de origen de archivo plano"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
-                      name="Columna de salida de error de origen de archivo plano" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
-              endId="Package\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]"
-              name="Salida de conversión de datos"
-              startId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-              endId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
-              name="Salida de origen de archivo plano"
-              startId="Package\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of customer_id"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_id]"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_unique_id]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of customer_unique_id"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_unique_id]"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_unique_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_zip_code_prefix]"
+                          cachedDataType="i4"
+                          cachedName="Copy of customer_zip_code_prefix"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_zip_code_prefix]"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_zip_code_prefix]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_city]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of customer_city"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_city]"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_city]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].Columns[Copy of customer_state]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="Copy of customer_state"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_state]"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of customer_state]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="customer_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_unique_id]"
+                          dataType="wstr"
+                          length="50"
+                          name="customer_unique_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_zip_code_prefix]"
+                          dataType="i4"
+                          name="customer_zip_code_prefix" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_city]"
+                          dataType="wstr"
+                          length="50"
+                          name="customer_city" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_state]"
+                          dataType="wstr"
+                          length="3"
+                          name="customer_state" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origen de archivo plano"
+                  localeId="3082"
+                  name="Origen Customer_Dataset"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si las columnas de longitud cero se tratan como NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano]"
+                      name="Salida de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_id]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_id]"
+                          name="customer_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_unique_id]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_unique_id]"
+                          name="customer_unique_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_zip_code_prefix]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_zip_code_prefix]"
+                          name="customer_zip_code_prefix"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_city]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_city]"
+                          name="customer_city"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_state]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].Columns[customer_state]"
+                          name="customer_state"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_unique_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_unique_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_zip_code_prefix]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_zip_code_prefix" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_city" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano].ExternalColumns[customer_state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_state" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Columna de salida de error de origen de archivo plano"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          name="Columna de salida de error de origen de archivo plano" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+                  endId="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de conversión de datos"
+                  startId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
+                <path
+                  refId="Package\Sequence Container\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Salida de origen de archivo plano"
+                  startId="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset.Outputs[Salida de origen de archivo plano]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{908FE309-D2E7-4A71-B197-291FF54D5EE1}"
+          DTS:From="Package\Sequence Container\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Tarea Flujo de datos" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{CB0F5064-78CF-4E12-AFF7-02D74023ABCD}"
-      DTS:From="Package\Execute SQL Task"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Tarea Flujo de datos" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -711,38 +723,26 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="300.5,91.5" />
+          Id="Package\Sequence Container\Execute SQL Task"
+          TopLeft="39.5,20.5" />
         <NodeLayout
           Size="176,42"
-          Id="Package\Tarea Flujo de datos"
-          TopLeft="302.5,204.5" />
+          Id="Package\Sequence Container\Tarea Flujo de datos"
+          TopLeft="31.5,90.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="382,133.5">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="120.25,62.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.5,71"
+              EndConnector="0,28"
               Start="0,0"
-              End="8.5,63.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="4,35.5" />
-                  <mssgle:LineSegment
-                    End="4.5,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,35.5"
-                    Point2="8.5,35.5"
-                    Point3="8.5,39.5" />
-                  <mssgle:LineSegment
-                    End="8.5,63.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -751,40 +751,47 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="238,183"
+          Size="238,226"
+          Id="Package\Sequence Container"
+          TopLeft="431,150" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Tarea Flujo de datos">
+    design-time-name="Package\Sequence Container\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="200,42"
-          Id="Package\Tarea Flujo de datos\Origen Customer_Dataset"
-          TopLeft="280,60" />
+          Id="Package\Sequence Container\Tarea Flujo de datos\Origen Customer_Dataset"
+          TopLeft="483,139" />
         <NodeLayout
           Size="175,42"
-          Id="Package\Tarea Flujo de datos\Conversión de datos"
-          TopLeft="286,156" />
+          Id="Package\Sequence Container\Tarea Flujo de datos\Conversión de datos"
+          TopLeft="498,211" />
         <NodeLayout
           Size="204,42"
-          Id="Package\Tarea Flujo de datos\Destino Customer_Dataset"
-          TopLeft="269,264" />
+          Id="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset"
+          TopLeft="489,285" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-          TopLeft="376.75,102">
+          Id="Package\Sequence Container\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
+          TopLeft="584.25,181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54"
+              EndConnector="0,30"
               Start="0,0"
-              End="0,46.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -794,19 +801,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
-          TopLeft="372.25,198">
+          Id="Package\Sequence Container\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+          TopLeft="588.25,253">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66"
+              EndConnector="0,32"
               Start="0,0"
-              End="0,58.5">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.5" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -819,7 +826,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino Customer_Dataset">
+    design-time-name="Package\Sequence Container\Tarea Flujo de datos\Destino Customer_Dataset">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
