@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{751232C8-9738-4526-864F-0FB1A82D6CF4}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{22D5E3E1-CC31-42C8-87F5-E48E0DD84B4A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1047,6 +1047,15 @@
                           lineageId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_value]"
                           name="payment_value"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].ExternalColumns[payment_id]"
+                          lineageId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_id]"
+                          name="payment_id"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1072,6 +1081,10 @@
                           refId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].ExternalColumns[payment_value]"
                           dataType="r4"
                           name="payment_value" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].ExternalColumns[payment_id]"
+                          dataType="i4"
+                          name="payment_id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1079,6 +1092,11 @@
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Error Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Error Output].Columns[payment_id]"
+                          name="payment_id" />
                         <outputColumn
                           refId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Error Output].Columns[order_id]"
                           dataType="wstr"
@@ -1585,7 +1603,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Fact]</property>
+                      name="OpenRowset">[dbo].[FactTable]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1738,6 +1756,18 @@
                           cachedName="geolocation_id"
                           externalMetadataColumnId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[geolocation_id]"
                           lineageId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[geolocation_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[payment_id]"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[payment_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[item_id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1809,6 +1839,14 @@
                           refId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[geolocation_id]"
                           dataType="i4"
                           name="geolocation_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[payment_id]"
+                          dataType="i4"
+                          name="payment_id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                          dataType="i4"
+                          name="item_id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1939,6 +1977,11 @@
                           cachedLength="50"
                           cachedName="payment_type"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[payment_type]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[payment_id]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2076,6 +2119,19 @@
                               name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[payment_type]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2168,6 +2224,11 @@
                           cachedLength="50"
                           cachedName="payment_type"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[payment_type]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[payment_id]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2338,6 +2399,19 @@
                               name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Right Input].Columns[customer_zip_code_prefix]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2435,6 +2509,11 @@
                           cachedDataType="i4"
                           cachedName="customer_zip_code_prefix"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output].Columns[customer_zip_code_prefix]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output].Columns[payment_id]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2450,6 +2529,11 @@
                           cachedName="order_id"
                           cachedSortKeyPosition="1"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output].Columns[order_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output].Columns[item_id]" />
                         <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input].Columns[product_id]"
                           cachedDataType="wstr"
@@ -2613,6 +2697,32 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input].Columns[item_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
                           refId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[product_id]"
                           dataType="wstr"
                           length="50"
@@ -2743,6 +2853,16 @@
                           cachedDataType="i4"
                           cachedName="customer_zip_code_prefix"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[customer_zip_code_prefix]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[payment_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[item_id]" />
                         <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input].Columns[seller_id]"
                           cachedDataType="wstr"
@@ -2920,6 +3040,32 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input].Columns[item_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
                           refId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[product_id]"
                           dataType="wstr"
                           length="50"
@@ -3077,6 +3223,16 @@
                           cachedLength="50"
                           cachedName="product_category_name"
                           lineageId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[product_category_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[payment_id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[item_id]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3300,6 +3456,32 @@
                               dataType="System.Int32"
                               description="The input column associated with this output column"
                               name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Right Input].Columns[geolocation_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input].Columns[item_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3858,6 +4040,22 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 1.Inputs[Sort Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3934,6 +4132,19 @@
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_value]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\DimPayments.Outputs[OLE DB Source Output].Columns[payment_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -4526,6 +4737,22 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 2.Inputs[Sort Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[payment_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -4661,6 +4888,19 @@
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[payment_type]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[payment_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -5053,6 +5293,22 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 4.Inputs[Sort Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[payment_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5203,6 +5459,19 @@
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[customer_zip_code_prefix]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -5349,6 +5618,22 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 5.Inputs[Sort Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\DimItems.Outputs[OLE DB Source Output].Columns[item_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5455,6 +5740,19 @@
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\DimItems.Outputs[OLE DB Source Output].Columns[freight_value]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\DimItems.Outputs[OLE DB Source Output].Columns[item_id]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -5656,6 +5954,38 @@
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 6.Inputs[Sort Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[payment_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 6.Inputs[Sort Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[item_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\Sort 6.Inputs[Sort Input].Columns[product_id]"
                           cachedDataType="wstr"
                           cachedLength="50"
@@ -5836,6 +6166,32 @@
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[customer_zip_code_prefix]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output].Columns[item_id]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -6434,6 +6790,38 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 8.Inputs[Sort Input].Columns[payment_id]"
+                          cachedDataType="i4"
+                          cachedName="payment_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[payment_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 8.Inputs[Sort Input].Columns[item_id]"
+                          cachedDataType="i4"
+                          cachedName="item_id"
+                          lineageId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[item_id]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -6626,6 +7014,32 @@
                               name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[product_category_name]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[payment_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[payment_id]"
+                          name="payment_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[payment_id]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[item_id]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output].Columns[item_id]"
+                          name="item_id">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output].Columns[item_id]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -6796,34 +7210,34 @@
               <paths>
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output]"
-                  endId="Package\Sequence Container\Data Flow Task\Sort 6.Inputs[Sort Input]"
-                  name="Merge Join Output"
-                  startId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output4]"
                   endId="Package\Sequence Container\Data Flow Task\Sort 11.Inputs[Sort Input]"
                   name="Merge Join Output"
                   startId="Package\Sequence Container\Data Flow Task\Merge Join 5.Outputs[Merge Join Output]" />
                 <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output3]"
-                  endId="Package\Sequence Container\Data Flow Task\Sort 2.Inputs[Sort Input]"
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output4]"
+                  endId="Package\Sequence Container\Data Flow Task\Sort 6.Inputs[Sort Input]"
                   name="Merge Join Output"
-                  startId="Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Merge Join 2.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output3]"
+                  endId="Package\Sequence Container\Data Flow Task\Sort 4.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output5]"
-                  endId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input]"
-                  name="Merge Join Output"
-                  startId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output1]"
                   endId="Package\Sequence Container\Data Flow Task\Sort 8.Inputs[Sort Input]"
                   name="Merge Join Output"
                   startId="Package\Sequence Container\Data Flow Task\Merge Join 3.Outputs[Merge Join Output]" />
                 <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output2]"
-                  endId="Package\Sequence Container\Data Flow Task\Sort 4.Inputs[Sort Input]"
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output1]"
+                  endId="Package\Sequence Container\Data Flow Task\Sort 2.Inputs[Sort Input]"
                   name="Merge Join Output"
-                  startId="Package\Sequence Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output2]"
+                  endId="Package\Sequence Container\Data Flow Task\Fact.Inputs[OLE DB Destination Input]"
+                  name="Merge Join Output"
+                  startId="Package\Sequence Container\Data Flow Task\Merge Join 4.Outputs[Merge Join Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[OLE DB Source Output]"
                   endId="Package\Sequence Container\Data Flow Task\Sort 3.Inputs[Sort Input]"
@@ -6861,64 +7275,64 @@
                   startId="Package\Sequence Container\Data Flow Task\DimGeolocations.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output10]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input]"
                   name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output9]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 5.Inputs[Merge Join Right Input]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input]"
                   name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 10.Outputs[Sort Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output8]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 5.Inputs[Merge Join Left Input]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
                   name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 9.Outputs[Sort Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Sort.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output7]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Right Input]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input]"
                   name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 7.Outputs[Sort Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output4]"
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output3]"
                   endId="Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Sequence Container\Data Flow Task\Sort 3.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output5]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output3]"
                   endId="Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Sequence Container\Data Flow Task\Sort 1.Outputs[Sort Output]" />
                 <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output4]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 1.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Data Flow Task\Sort 2.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output2]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 5.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Data Flow Task\Sort 9.Outputs[Sort Output]" />
+                <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output11]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Data Flow Task\Sort 7.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Data Flow Task\Sort 8.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output6]"
                   endId="Package\Sequence Container\Data Flow Task\Merge Join 4.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Sequence Container\Data Flow Task\Sort 11.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output1]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 3.Inputs[Merge Join Left Input]"
+                  endId="Package\Sequence Container\Data Flow Task\Merge Join 5.Inputs[Merge Join Right Input]"
                   name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 6.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 5.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output6]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Sequence Container\Data Flow Task.Paths[Sort Output2]"
-                  endId="Package\Sequence Container\Data Flow Task\Merge Join 2.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\Sequence Container\Data Flow Task\Sort 4.Outputs[Sort Output]" />
+                  startId="Package\Sequence Container\Data Flow Task\Sort 10.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -6937,7 +7351,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{292A0429-EBEC-49F7-84EE-F2C605BE3E60}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.[Fact];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.[FactTable];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -6968,7 +7382,7 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Sequence Container\Data Flow Task"
-          TopLeft="80,100" />
+          TopLeft="80,106" />
         <NodeLayout
           Size="163,42"
           Id="Package\Sequence Container\Execute SQL Task"
@@ -6979,14 +7393,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,21.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6998,8 +7412,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="302,197"
-          Size="302,240"
+          PanelSize="302,203"
+          Size="302,246"
           Id="Package\Sequence Container"
           TopLeft="156,88" />
       </GraphLayout>
@@ -7011,53 +7425,25 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 7"
-          TopLeft="494,633" />
+          Size="98,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort"
+          TopLeft="42,94" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 9"
-          TopLeft="701,697" />
+          Size="138,42"
+          Id="Package\Sequence Container\Data Flow Task\DimProducts"
+          TopLeft="477,552" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 3"
-          TopLeft="309,282" />
+          Size="113,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 10"
+          TopLeft="858,696" />
         <NodeLayout
           Size="107,42"
           Id="Package\Sequence Container\Data Flow Task\Sort 8"
           TopLeft="393,800" />
         <NodeLayout
           Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 5"
-          TopLeft="375,464" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Sequence Container\Data Flow Task\DimOrders"
-          TopLeft="24,25" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Sequence Container\Data Flow Task\DimPayments"
-          TopLeft="197,23" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence Container\Data Flow Task\Merge Join"
-          TopLeft="108,200" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Sequence Container\Data Flow Task\DimProducts"
-          TopLeft="477,552" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 6"
-          TopLeft="291,632" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Data Flow Task\Merge Join 2"
-          TopLeft="276,550" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence Container\Data Flow Task\DimGeolocations"
-          TopLeft="836,628" />
+          Id="Package\Sequence Container\Data Flow Task\Sort 9"
+          TopLeft="701,697" />
         <NodeLayout
           Size="125,42"
           Id="Package\Sequence Container\Data Flow Task\DimItems"
@@ -7067,229 +7453,75 @@
           Id="Package\Sequence Container\Data Flow Task\Fact"
           TopLeft="260,892" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 1"
-          TopLeft="213,95" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 2"
-          TopLeft="120,288" />
+          Size="139,42"
+          Id="Package\Sequence Container\Data Flow Task\Merge Join 5"
+          TopLeft="770,780" />
         <NodeLayout
           Size="139,42"
           Id="Package\Sequence Container\Data Flow Task\Merge Join 1"
           TopLeft="183,375" />
         <NodeLayout
+          Size="143,42"
+          Id="Package\Sequence Container\Data Flow Task\DimPayments"
+          TopLeft="197,23" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 2"
+          TopLeft="120,287" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 1"
+          TopLeft="215,95" />
+        <NodeLayout
           Size="107,42"
           Id="Package\Sequence Container\Data Flow Task\Sort 4"
           TopLeft="206,460" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Data Flow Task\Merge Join 3"
-          TopLeft="375,718" />
+          Size="128,42"
+          Id="Package\Sequence Container\Data Flow Task\DimSellers"
+          TopLeft="689,626" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort"
-          TopLeft="42,94" />
+          Size="157,42"
+          Id="Package\Sequence Container\Data Flow Task\DimGeolocations"
+          TopLeft="836,628" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 7"
+          TopLeft="494,633" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 11"
+          TopLeft="731,851" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Sequence Container\Data Flow Task\DimOrders"
+          TopLeft="24,25" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Data Flow Task\Merge Join 4"
+          TopLeft="528,885" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 3"
+          TopLeft="309,282" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Data Flow Task\Merge Join 2"
+          TopLeft="276,550" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 5"
+          TopLeft="375,464" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence Container\Data Flow Task\Merge Join"
+          TopLeft="108,200" />
         <NodeLayout
           Size="147,42"
           Id="Package\Sequence Container\Data Flow Task\DimCustomers"
           TopLeft="282,203" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Sequence Container\Data Flow Task\DimSellers"
-          TopLeft="689,626" />
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output3]"
-          TopLeft="173.25,242">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output2]"
-          TopLeft="256,417">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output1]"
-          TopLeft="445.5,760">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output]"
-          TopLeft="345,592">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output7]"
-          TopLeft="547.5,675">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-81.1666666666667,43"
-              Start="0,0"
-              End="-81.1666666666667,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5064011379801" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5064011379801"
-                    Point2="0,25.5064011379801"
-                    Point3="-4,25.5064011379801" />
-                  <mssgle:LineSegment
-                    End="-77.1666666666667,25.5064011379801" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-77.1666666666667,25.5064011379801"
-                    Point2="-81.1666666666667,25.5064011379801"
-                    Point3="-81.1666666666667,29.5064011379801" />
-                  <mssgle:LineSegment
-                    End="-81.1666666666667,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output6]"
-          TopLeft="91,136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.6666666666667,64"
-              Start="0,0"
-              End="61.6666666666667,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.9331306990882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.9331306990882"
-                    Point2="0,37.9331306990882"
-                    Point3="4,37.9331306990882" />
-                  <mssgle:LineSegment
-                    End="57.6666666666667,37.9331306990882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57.6666666666667,37.9331306990882"
-                    Point2="61.6666666666667,37.9331306990882"
-                    Point3="61.6666666666667,41.9331306990882" />
-                  <mssgle:LineSegment
-                    End="61.6666666666667,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output5]"
-          TopLeft="173.5,330">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57.1666666666667,45"
-              Start="0,0"
-              End="57.1666666666667,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.6927453769559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.6927453769559"
-                    Point2="0,26.6927453769559"
-                    Point3="4,26.6927453769559" />
-                  <mssgle:LineSegment
-                    End="53.1666666666667,26.6927453769559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.1666666666667,26.6927453769559"
-                    Point2="57.1666666666667,26.6927453769559"
-                    Point3="57.1666666666667,30.6927453769559" />
-                  <mssgle:LineSegment
-                    End="57.1666666666667,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output4]"
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output3]"
           TopLeft="362.5,324">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7323,65 +7555,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output3]"
-          TopLeft="266.5,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-73.1666666666667,63"
-              Start="0,0"
-              End="-73.1666666666667,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.3404255319149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.3404255319149"
-                    Point2="0,37.3404255319149"
-                    Point3="-4,37.3404255319149" />
-                  <mssgle:LineSegment
-                    End="-69.1666666666667,37.3404255319149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-69.1666666666667,37.3404255319149"
-                    Point2="-73.1666666666667,37.3404255319149"
-                    Point3="-73.1666666666667,41.3404255319149" />
-                  <mssgle:LineSegment
-                    End="-73.1666666666667,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output2]"
-          TopLeft="259.5,502">
+          TopLeft="754.5,739">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.1666666666667,48"
+              EndConnector="85,41"
               Start="0,0"
-              End="64.1666666666667,40.5">
+              End="85,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.4722617354196" />
+                    End="0,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.4722617354196"
-                    Point2="0,28.4722617354196"
-                    Point3="4,28.4722617354196" />
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
                   <mssgle:LineSegment
-                    End="60.1666666666667,28.4722617354196" />
+                    End="81,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="60.1666666666667,28.4722617354196"
-                    Point2="64.1666666666667,28.4722617354196"
-                    Point3="64.1666666666667,32.4722617354196" />
+                    Point1="81,20.5"
+                    Point2="85,20.5"
+                    Point3="85,24.5" />
                   <mssgle:LineSegment
-                    End="64.1666666666667,40.5" />
+                    End="85,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7392,30 +7590,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="344.5,674">
+          TopLeft="914.5,738">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.1666666666667,44"
+              EndConnector="-53.1666666666666,42"
               Start="0,0"
-              End="78.1666666666667,36.5">
+              End="-53.1666666666666,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.099573257468" />
+                    End="0,20.9132290184922" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.099573257468"
-                    Point2="0,26.099573257468"
-                    Point3="4,26.099573257468" />
+                    Point1="0,20.9132290184922"
+                    Point2="0,24.9132290184922"
+                    Point3="-4,24.9132290184922" />
                   <mssgle:LineSegment
-                    End="74.1666666666667,26.099573257468" />
+                    End="-49.1666666666666,24.9132290184922" />
                   <mssgle:CubicBezierSegment
-                    Point1="74.1666666666667,26.099573257468"
-                    Point2="78.1666666666667,26.099573257468"
-                    Point3="78.1666666666667,30.099573257468" />
+                    Point1="-49.1666666666666,24.9132290184922"
+                    Point2="-53.1666666666666,24.9132290184922"
+                    Point3="-53.1666666666666,28.9132290184922" />
                   <mssgle:LineSegment
-                    End="78.1666666666667,36.5" />
+                    End="-53.1666666666666,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7426,30 +7624,52 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output]"
-          TopLeft="428.5,506">
+          TopLeft="446.5,842">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-61.1666666666667,44"
+              EndConnector="151,43"
               Start="0,0"
-              End="-61.1666666666667,36.5">
+              End="151,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.099573257468" />
+                    End="0,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.099573257468"
-                    Point2="0,26.099573257468"
-                    Point3="-4,26.099573257468" />
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
                   <mssgle:LineSegment
-                    End="-57.1666666666667,26.099573257468" />
+                    End="147,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-57.1666666666667,26.099573257468"
-                    Point2="-61.1666666666667,26.099573257468"
-                    Point3="-61.1666666666667,30.099573257468" />
+                    Point1="147,21.5"
+                    Point2="151,21.5"
+                    Point3="151,25.5" />
                   <mssgle:LineSegment
-                    End="-61.1666666666667,36.5" />
+                    End="151,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[OLE DB Source Output6]"
+          TopLeft="914.5,670">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7526,7 +7746,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[OLE DB Source Output2]"
-          TopLeft="267.5,65">
+          TopLeft="268.5,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7590,62 +7810,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 10"
-          TopLeft="858,696" />
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[OLE DB Source Output6]"
-          TopLeft="914.5,670">
+          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output3]"
+          TopLeft="256,417">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26"
+              EndConnector="0,43"
               Start="0,0"
-              End="0,18.5">
+              End="0,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Data Flow Task\Merge Join 5"
-          TopLeft="770,780" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output8]"
-          TopLeft="754.5,739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85,41"
-              Start="0,0"
-              End="85,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="4,20.5" />
-                  <mssgle:LineSegment
-                    End="81,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="81,20.5"
-                    Point2="85,20.5"
-                    Point3="85,24.5" />
-                  <mssgle:LineSegment
-                    End="85,33.5" />
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7655,31 +7833,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output9]"
-          TopLeft="914.5,738">
+          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output2]"
+          TopLeft="528,909.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-53.1666666666666,42"
+              EndConnector="-169,0"
               Start="0,0"
-              End="-53.1666666666666,34.5">
+              End="-161.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.9132290184922" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.9132290184922"
-                    Point2="0,24.9132290184922"
-                    Point3="-4,24.9132290184922" />
-                  <mssgle:LineSegment
-                    End="-49.1666666666666,24.9132290184922" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-49.1666666666666,24.9132290184922"
-                    Point2="-53.1666666666666,24.9132290184922"
-                    Point3="-53.1666666666666,28.9132290184922" />
-                  <mssgle:LineSegment
-                    End="-53.1666666666666,34.5" />
+                    End="-161.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7688,12 +7854,30 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Sequence Container\Data Flow Task\Sort 11"
-          TopLeft="731,851" />
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output4]"
+          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output1]"
+          TopLeft="173.25,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output]"
           TopLeft="839.5,822">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7726,36 +7910,278 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Data Flow Task\Merge Join 4"
-          TopLeft="526,886" />
         <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output10]"
-          TopLeft="446.5,842">
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output9]"
+          TopLeft="259.5,502">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="149,44"
+              EndConnector="64.1666666666667,48"
               Start="0,0"
-              End="149,36.5">
+              End="64.1666666666667,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
+                    End="0,24.4722617354196" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
+                    Point1="0,24.4722617354196"
+                    Point2="0,28.4722617354196"
+                    Point3="4,28.4722617354196" />
                   <mssgle:LineSegment
-                    End="145,22" />
+                    End="60.1666666666667,28.4722617354196" />
                   <mssgle:CubicBezierSegment
-                    Point1="145,22"
-                    Point2="149,22"
-                    Point3="149,26" />
+                    Point1="60.1666666666667,28.4722617354196"
+                    Point2="64.1666666666667,28.4722617354196"
+                    Point3="64.1666666666667,32.4722617354196" />
                   <mssgle:LineSegment
-                    End="149,36.5" />
+                    End="64.1666666666667,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output8]"
+          TopLeft="91,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.6666666666667,64"
+              Start="0,0"
+              End="61.6666666666667,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9331306990882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.9331306990882"
+                    Point2="0,37.9331306990882"
+                    Point3="4,37.9331306990882" />
+                  <mssgle:LineSegment
+                    End="57.6666666666667,37.9331306990882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.6666666666667,37.9331306990882"
+                    Point2="61.6666666666667,37.9331306990882"
+                    Point3="61.6666666666667,41.9331306990882" />
+                  <mssgle:LineSegment
+                    End="61.6666666666667,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output7]"
+          TopLeft="428.5,506">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61.1666666666667,44"
+              Start="0,0"
+              End="-61.1666666666667,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.099573257468" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.099573257468"
+                    Point2="0,26.099573257468"
+                    Point3="-4,26.099573257468" />
+                  <mssgle:LineSegment
+                    End="-57.1666666666667,26.099573257468" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-57.1666666666667,26.099573257468"
+                    Point2="-61.1666666666667,26.099573257468"
+                    Point3="-61.1666666666667,30.099573257468" />
+                  <mssgle:LineSegment
+                    End="-61.1666666666667,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output6]"
+          TopLeft="731,872">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64,34"
+              Start="0,0"
+              End="-56.5,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-28,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28,0"
+                    Point2="-32,0"
+                    Point3="-32,4" />
+                  <mssgle:LineSegment
+                    End="-32,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32,30"
+                    Point2="-32,34"
+                    Point3="-36,34" />
+                  <mssgle:LineSegment
+                    End="-56.5,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output5]"
+          TopLeft="268.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-75.1666666666667,63"
+              Start="0,0"
+              End="-75.1666666666667,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3404255319149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.3404255319149"
+                    Point2="0,37.3404255319149"
+                    Point3="-4,37.3404255319149" />
+                  <mssgle:LineSegment
+                    End="-71.1666666666667,37.3404255319149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.1666666666667,37.3404255319149"
+                    Point2="-75.1666666666667,37.3404255319149"
+                    Point3="-75.1666666666667,41.3404255319149" />
+                  <mssgle:LineSegment
+                    End="-75.1666666666667,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output4]"
+          TopLeft="173.5,329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.1666666666667,46"
+              Start="0,0"
+              End="57.1666666666667,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2859174964438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2859174964438"
+                    Point2="0,27.2859174964438"
+                    Point3="4,27.2859174964438" />
+                  <mssgle:LineSegment
+                    End="53.1666666666667,27.2859174964438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.1666666666667,27.2859174964438"
+                    Point2="57.1666666666667,27.2859174964438"
+                    Point3="57.1666666666667,31.2859174964438" />
+                  <mssgle:LineSegment
+                    End="57.1666666666667,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Data Flow Task\Sort 6"
+          TopLeft="303,630" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output4]"
+          TopLeft="345.5,592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,38"
+              Start="0,0"
+              End="11,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="7,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,19"
+                    Point2="11,19"
+                    Point3="11,23" />
+                  <mssgle:LineSegment
+                    End="11,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Data Flow Task\Merge Join 3"
+          TopLeft="372,717" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output10]"
+          TopLeft="356.5,672">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.1666666666667,45"
+              Start="0,0"
+              End="63.1666666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6927453769559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6927453769559"
+                    Point2="0,26.6927453769559"
+                    Point3="4,26.6927453769559" />
+                  <mssgle:LineSegment
+                    End="59.1666666666667,26.6927453769559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.1666666666667,26.6927453769559"
+                    Point2="63.1666666666667,26.6927453769559"
+                    Point3="63.1666666666667,30.6927453769559" />
+                  <mssgle:LineSegment
+                    End="63.1666666666667,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7766,30 +8192,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Sort Output11]"
-          TopLeft="731,872">
+          TopLeft="547.5,675">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-66,35"
+              EndConnector="-84.1666666666667,42"
               Start="0,0"
-              End="-58.5,35">
+              End="-84.1666666666667,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-29,0" />
+                    End="0,20.9132290184922" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29,0"
-                    Point2="-33,0"
-                    Point3="-33,4" />
+                    Point1="0,20.9132290184922"
+                    Point2="0,24.9132290184922"
+                    Point3="-4,24.9132290184922" />
                   <mssgle:LineSegment
-                    End="-33,31" />
+                    End="-80.1666666666667,24.9132290184922" />
                   <mssgle:CubicBezierSegment
-                    Point1="-33,31"
-                    Point2="-33,35"
-                    Point3="-37,35" />
+                    Point1="-80.1666666666667,24.9132290184922"
+                    Point2="-84.1666666666667,24.9132290184922"
+                    Point3="-84.1666666666667,28.9132290184922" />
                   <mssgle:LineSegment
-                    End="-58.5,35" />
+                    End="-84.1666666666667,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7800,18 +8226,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Merge Join Output5]"
-          TopLeft="526,910">
+          TopLeft="444,759">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-167,0"
+              EndConnector="0,41"
               Start="0,0"
-              End="-159.5,0">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-159.5,0" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7825,19 +8251,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Data Flow Task\DimPayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Data Flow Task\DimItems">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7876,32 +8289,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Data Flow Task\Fact">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Data Flow Task\DimSellers">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Data Flow Task\DimGeolocations">
     <Properties>
       <Property>
@@ -7915,7 +8302,46 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\Fact">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\DimItems">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Data Flow Task\DimCustomers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\DimSellers">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
